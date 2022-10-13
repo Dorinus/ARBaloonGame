@@ -7,6 +7,7 @@ public class ShootScript : MonoBehaviour
     public Camera arCamera;
     public GameObject popSoundObject;
     public static int score;
+    public float addTimeToTimer = 1.0f;
 
     public void Shoot()
     {
@@ -18,7 +19,7 @@ public class ShootScript : MonoBehaviour
                 Destroy(hit.transform.gameObject);
                 Instantiate(popSoundObject);
                 score++;
-                TimerScript.timeLeft += 2.0f;
+                TimerScript.timeLeft += addTimeToTimer;
             }
         }
     }
